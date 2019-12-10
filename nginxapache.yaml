@@ -1,0 +1,16 @@
+---
+ - hosts : slave1
+   sudo : yes 
+   name : play1
+   tasks :
+    - name: Install nginx
+      apt : name=nginx state=latest
+ - hosts : slave2
+   sudo : yes
+   name : play 2
+   task :
+    - name : Install Apache
+      apt : name=apache2 state=latest
+    - name : Adding website
+      script : hello.sh
+      
